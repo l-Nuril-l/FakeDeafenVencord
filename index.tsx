@@ -65,6 +65,8 @@ function makeIcon() {
 }
 
 function FakeVoiceOptionToggleButton() {
+	const FakeD = settings.use(["fakeD"]).fakeD
+
   return (
     <HeaderBarIcon
       className="vc-fake-voice-options"
@@ -74,7 +76,7 @@ function FakeVoiceOptionToggleButton() {
         setTimeout(deafen, 250);
         if (settings.store.muteUponFakeDeafen) setTimeout(mute, 300);
       }}
-      tooltip={settings.store.fakeD ? "Disable Fake/Deafen Mute" : "Enable Fake/Deafen Mute"}
+      tooltip={FakeD ? "Disable Fake/Deafen Mute" : "Enable Fake/Deafen Mute"}
       icon={makeIcon()}
     />
   );
